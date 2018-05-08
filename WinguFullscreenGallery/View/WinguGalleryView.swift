@@ -11,7 +11,7 @@ import UIKit
 public class WinguGalleryView: WinguNibLoadingView {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    public var images: [UIImage?]?
+    public var assets: [ImageAsset?]?
 
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -22,12 +22,12 @@ public class WinguGalleryView: WinguNibLoadingView {
 extension WinguGalleryView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images?.count ?? 0
+        return assets?.count ?? 0
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: WinguGalleryCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: WinguGalleryCollectionViewCell.reusableIdentifier, for: indexPath) as? WinguGalleryCollectionViewCell)!
-        cell.addImage(images?[indexPath.row])
+        cell.withImageAsset(assets?[indexPath.row])
         return cell
     }
 }

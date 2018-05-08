@@ -11,23 +11,24 @@ import WinguFullscreenGallery
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var winguGalleryView: WinguGalleryView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var returnArray: [UIImage?] = [UIImage]()
+        var returnArray: [ImageAsset?] = [ImageAsset]()
         for i in 1...7 {
-            returnArray.append(UIImage(named: String(i)))
+            let image = UIImage(named: String(i))
+            let asset = ImageAsset(image: image!)
+            returnArray.append(asset)
         }
-        winguGalleryView.images = returnArray
+        winguGalleryView.assets = returnArray
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        
     }
-
-
+    
 }
 

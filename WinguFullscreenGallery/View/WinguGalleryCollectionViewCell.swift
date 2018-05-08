@@ -17,9 +17,9 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var galleryImageView: UIImageView!
     
-    func addImage(_ image: UIImage?) {
-        guard let image = image else { return }
-        galleryImageView.image = self.fitIntoFrame(image: image)
+    func withImageAsset(_ asset: ImageAsset?) {
+        guard let asset = asset else { return }
+        galleryImageView.image = self.fitIntoFrame(image: asset.image)
     }
     
     override func draw(_ rect: CGRect) {
