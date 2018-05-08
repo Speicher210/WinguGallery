@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wL1-yf-ihp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WinguFullscreenGalleryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ps-Lu-OAl" customClass="SimpleZoom" customModule="WinguFullscreenGallery">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5ps-Lu-OAl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0qb-ab-m2M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5ps-Lu-OAl" secondAttribute="trailing" id="FRS-NW-Z89"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5ps-Lu-OAl" secondAttribute="bottom" id="Ham-nh-Lyb"/>
+                            <constraint firstItem="5ps-Lu-OAl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eAi-M3-cIq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-513" y="50"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rpy-Vb-Am7">
+            <objects>
+                <viewController id="wL1-yf-ihp" customClass="ViewController" customModule="WinguFullscreenGalleryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OyG-jK-V2S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncu-TL-A6u" customClass="WinguGalleryView" customModule="WinguFullscreenGallery">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mj3-Tf-BCE" firstAttribute="trailing" secondItem="Ncu-TL-A6u" secondAttribute="trailing" id="QKX-tt-HL1"/>
+                            <constraint firstItem="Ncu-TL-A6u" firstAttribute="leading" secondItem="Mj3-Tf-BCE" secondAttribute="leading" id="awE-zv-hND"/>
+                            <constraint firstItem="Ncu-TL-A6u" firstAttribute="top" secondItem="Mj3-Tf-BCE" secondAttribute="top" id="cAh-Ra-3DW"/>
+                            <constraint firstItem="Mj3-Tf-BCE" firstAttribute="bottom" secondItem="Ncu-TL-A6u" secondAttribute="bottom" id="jpA-Us-7Ta"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Mj3-Tf-BCE"/>
+                    </view>
+                    <connections>
+                        <outlet property="winguGalleryView" destination="Ncu-TL-A6u" id="zcS-5X-b7j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80J-mV-Hnl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="362" y="50"/>
+        </scene>
+    </scenes>
+</document>
