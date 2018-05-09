@@ -11,6 +11,8 @@ import UIKit
 class WinguGalleryCollectionViewCell: UICollectionViewCell {
     static var reusableIdentifier: String = "WinguGalleryCollectionViewCell"
     
+    private var dataTask: URLSessionDataTask?
+    
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
@@ -19,13 +21,25 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
     
     func withImageAsset(_ asset: ImageAsset?) {
         guard let asset = asset else { return }
-        galleryImageView.image = self.fitIntoFrame(image: asset.image)
+        if let image = asset.image {
+            galleryImageView.image = self.fitIntoFrame(image: image)
+        } else if asset.url != nil {
+            self.galleryImageView.image = UIImage()
+            self.dataTask = asset.download { (success) in
+                self.galleryImageView.image = self.fitIntoFrame(image: asset.image)
+                self.redrawConstraintIfNeeded()
+            }
+        }
     }
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         self.scrollView.maximumZoomScale = 4
         self.redrawConstraintIfNeeded()
+    }
+    
+    func cancelPendingDataTask() {
+        self.dataTask?.cancel()
     }
     
     override func prepareForReuse() {
@@ -44,8 +58,11 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
     
     func redrawConstraintIfNeeded() {
         let imageHeight = self.galleryImageView.frame.size.height
-        let spaceLeft = self.scrollView.frame.size.height-imageHeight
-        let constraintConstantValue = spaceLeft/2 > 0 ? spaceLeft/2 : 0
+        let imageWidth = self.galleryImageView.frame.size.width
+        let spaceLeftVertical = self.scrollView.frame.size.height-imageHeight
+        let spaceLeftHorizontal = self.scrollView.frame.size.width-imageWidth
+        print(spaceLeftHorizontal)
+        let constraintConstantValue = spaceLeftVertical/2 > 0 ? spaceLeftVertical/2 : 0
         self.setMargins(constraintConstantValue)
         self.layoutIfNeeded()
     }
@@ -62,7 +79,11 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let finalImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.imageHeightConstraint.constant = frame.size.width/imageRatio
+        if imageRatio < (UIScreen.main.bounds.size.width/UIScreen.main.bounds.size.height) {
+            self.imageHeightConstraint.constant = frame.size.height
+        } else {
+            self.imageHeightConstraint.constant = frame.size.width/imageRatio
+        }
         return finalImage
     }
 }

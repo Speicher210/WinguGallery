@@ -34,4 +34,25 @@ public class ImageAsset: NSObject {
         self.caption = caption
     }
     
+    func download(completion:@escaping(_ success: Bool?) -> Void) -> URLSessionDataTask? {
+        guard let url = url else {
+            completion(false)
+            return nil
+        }
+        let dataTask = URLSession.shared.dataTask(with: url) { data, response, error  in
+            guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                  let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                  let data = data, error == nil,
+                  let image = UIImage(data: data)
+                  else {
+                    DispatchQueue.main.async { completion(false) }
+                    return
+            }
+            self.image = image
+            DispatchQueue.main.async { completion(true) }
+        }
+        dataTask.resume()
+        return dataTask
+    }
+
 }

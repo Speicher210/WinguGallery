@@ -16,18 +16,37 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.segmentedControlValueChanged(self.segmentedControl)
+    }
+
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: self.fillWithLocalImages()
+        case 1: self.fillWithURLImages()
+        default: break
+        }
+    }
+    
+    func fillWithURLImages() {
+        let lowRange: UInt32 = 600
+        let highRange: UInt32 = 1200
         var returnArray: [ImageAsset?] = [ImageAsset]()
-        for i in 1...7 {
+        for _ in 1...8 {
+            let url = URL(string: "https://picsum.photos/\(Int(arc4random_uniform(highRange) + lowRange))/\(Int(arc4random_uniform(highRange) + lowRange))")
+            let asset = ImageAsset(url: url!)
+            returnArray.append(asset)
+        }
+        winguGalleryView.assets = returnArray
+    }
+    
+    func fillWithLocalImages() {
+        var returnArray: [ImageAsset?] = [ImageAsset]()
+        for i in 1...8 {
             let image = UIImage(named: String(i))
             let asset = ImageAsset(image: image!)
             returnArray.append(asset)
         }
         winguGalleryView.assets = returnArray
-    }
-
-    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        
     }
     
 }

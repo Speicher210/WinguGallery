@@ -11,7 +11,11 @@ import UIKit
 public class WinguGalleryView: WinguNibLoadingView {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    public var assets: [ImageAsset?]?
+    public var assets: [ImageAsset?]? {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
 
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -33,7 +37,9 @@ extension WinguGalleryView: UICollectionViewDataSource {
 }
 
 extension WinguGalleryView: UICollectionViewDelegate {
-    
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        (cell as? WinguGalleryCollectionViewCell)?.cancelPendingDataTask()
+    }
 }
 
 extension WinguGalleryView: UICollectionViewDelegateFlowLayout {
