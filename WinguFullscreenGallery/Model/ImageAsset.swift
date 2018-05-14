@@ -35,24 +35,30 @@ public class ImageAsset: NSObject {
     }
     
     func download(completion:@escaping(_ success: Bool?) -> Void) -> URLSessionDataTask? {
+        return ImageAsset.download(url: url) { (success, image) in
+            self.image = image
+            completion(success)
+        }
+    }
+
+    static func download(url: URL?, completion:@escaping(_ success: Bool?, _ image: UIImage?) -> Void) -> URLSessionDataTask? {
         guard let url = url else {
-            completion(false)
+            completion(false, nil)
             return nil
         }
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error  in
             guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                  let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                  let data = data, error == nil,
-                  let image = UIImage(data: data)
-                  else {
-                    DispatchQueue.main.async { completion(false) }
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else {
+                    DispatchQueue.main.async { completion(false, nil) }
                     return
             }
-            self.image = image
-            DispatchQueue.main.async { completion(true) }
+            DispatchQueue.main.async { completion(true, image) }
         }
         dataTask.resume()
         return dataTask
     }
-
+    
 }

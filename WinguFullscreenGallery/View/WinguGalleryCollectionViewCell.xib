@@ -26,15 +26,15 @@
                                 <color key="backgroundColor" red="0.2251217821" green="0.66666666669999997" blue="0.663158935" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="buA-yt-EU1"/>
+                                    <constraint firstAttribute="width" constant="372" id="dup-Ci-FrN"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Y2R-g3-1to" firstAttribute="width" secondItem="fYl-gF-3Tc" secondAttribute="width" id="FVS-tM-GWk"/>
-                            <constraint firstAttribute="trailing" secondItem="Y2R-g3-1to" secondAttribute="trailing" id="Q4y-Pe-Blg"/>
+                            <constraint firstAttribute="trailing" secondItem="Y2R-g3-1to" secondAttribute="trailing" priority="250" id="Q4y-Pe-Blg"/>
                             <constraint firstItem="Y2R-g3-1to" firstAttribute="top" secondItem="fYl-gF-3Tc" secondAttribute="top" priority="250" id="S31-PI-s22"/>
-                            <constraint firstItem="Y2R-g3-1to" firstAttribute="leading" secondItem="fYl-gF-3Tc" secondAttribute="leading" id="l8D-LP-ERM"/>
+                            <constraint firstItem="Y2R-g3-1to" firstAttribute="leading" secondItem="fYl-gF-3Tc" secondAttribute="leading" priority="250" id="l8D-LP-ERM"/>
                             <constraint firstAttribute="bottom" secondItem="Y2R-g3-1to" secondAttribute="bottom" priority="250" id="u4J-cI-jJ1"/>
                         </constraints>
                         <connections>
@@ -55,13 +55,16 @@
                 <outlet property="bottomConstraint" destination="u4J-cI-jJ1" id="apG-eS-WzL"/>
                 <outlet property="galleryImageView" destination="Y2R-g3-1to" id="uWL-Dw-oXx"/>
                 <outlet property="imageHeightConstraint" destination="buA-yt-EU1" id="OGS-lC-INp"/>
+                <outlet property="imageWidthConstraint" destination="dup-Ci-FrN" id="8cX-Dl-FHP"/>
+                <outlet property="leadingConstraint" destination="l8D-LP-ERM" id="rQa-OZ-pFo"/>
                 <outlet property="scrollView" destination="fYl-gF-3Tc" id="veY-z3-1mI"/>
                 <outlet property="topConstraint" destination="S31-PI-s22" id="DO9-Zk-F38"/>
+                <outlet property="trailingConstraint" destination="Q4y-Pe-Blg" id="hrk-zy-L3s"/>
             </connections>
             <point key="canvasLocation" x="195" y="258"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="3" width="250" height="375"/>
+        <image name="3" width="592" height="1555"/>
     </resources>
 </document>

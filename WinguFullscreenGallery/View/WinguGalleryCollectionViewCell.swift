@@ -8,18 +8,29 @@
 
 import UIKit
 
+protocol WinguGalleryCollectionViewCellDelegate: class {
+    func didStartZooming(_ cell: WinguGalleryCollectionViewCell)
+}
+
 class WinguGalleryCollectionViewCell: UICollectionViewCell {
     static var reusableIdentifier: String = "WinguGalleryCollectionViewCell"
     
     private var dataTask: URLSessionDataTask?
+    weak var delegate: WinguGalleryCollectionViewCellDelegate?
     
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var galleryImageView: UIImageView!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingConstraint: NSLayoutConstraint!
+    
+    private var observer: NSKeyValueObservation?
     
     func withImageAsset(_ asset: ImageAsset?) {
+        guard self.dataTask?.state != URLSessionDataTask.State.running else { return }
         guard let asset = asset else { return }
         if let image = asset.image {
             galleryImageView.image = self.fitIntoFrame(image: image)
@@ -32,14 +43,32 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    private func downloadAsset(from url: URL) {
+        self.dataTask = ImageAsset.download(url: url) { (success, image) in
+            self.galleryImageView.image = self.fitIntoFrame(image: image)
+            self.redrawConstraintIfNeeded()
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         self.scrollView.maximumZoomScale = 4
         self.redrawConstraintIfNeeded()
+        self.observer = self.observe(\.bounds, options: NSKeyValueObservingOptions.new, changeHandler: { (cell, value) in
+            self.galleryImageView.image = self.fitIntoFrame(image: self.galleryImageView.image)
+            self.redrawConstraintIfNeeded()
+        })
     }
     
     func cancelPendingDataTask() {
         self.dataTask?.cancel()
+    }
+    
+    override func layoutSubviews() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.redrawConstraintIfNeeded()
+        }
+        super.layoutSubviews()
     }
     
     override func prepareForReuse() {
@@ -51,9 +80,11 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setMargins(_ value: CGFloat) {
-        self.topConstraint.constant = value
-        self.bottomConstraint.constant = value
+    func setMargins(vertical: CGFloat, horizontal: CGFloat) {
+        self.topConstraint.constant = vertical
+        self.bottomConstraint.constant = vertical
+        self.leadingConstraint.constant = horizontal
+        self.trailingConstraint.constant = horizontal
     }
     
     func redrawConstraintIfNeeded() {
@@ -61,36 +92,52 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         let imageWidth = self.galleryImageView.frame.size.width
         let spaceLeftVertical = self.scrollView.frame.size.height-imageHeight
         let spaceLeftHorizontal = self.scrollView.frame.size.width-imageWidth
-        print(spaceLeftHorizontal)
-        let constraintConstantValue = spaceLeftVertical/2 > 0 ? spaceLeftVertical/2 : 0
-        self.setMargins(constraintConstantValue)
+        let constraintConstantValueVertical = spaceLeftVertical/2 > 0 ? spaceLeftVertical/2 : 0
+        let constraintConstantValueHorizontal = spaceLeftHorizontal/2 > 0 ? spaceLeftHorizontal/2 : 0
+        self.setMargins(vertical: constraintConstantValueVertical, horizontal: constraintConstantValueHorizontal)
         self.layoutIfNeeded()
     }
     
     private func fitIntoFrame(image: UIImage?) -> UIImage? {
         guard let image = image else { return nil }
+        guard image.size != CGSize.zero else { return nil }
+        let screenRatio = UIScreen.main.bounds.size.width/UIScreen.main.bounds.size.height
         var reqWidth: CGFloat = frame.size.width
         if image.size.width > reqWidth {
             reqWidth = image.size.width
         }
         let imageRatio = image.size.width/image.size.height
+        if imageRatio < screenRatio {
+            reqWidth = frame.size.height*imageRatio
+        }
         let size = CGSize(width: reqWidth, height: reqWidth/imageRatio)
         UIGraphicsBeginImageContext(size)
         image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let finalImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        if imageRatio < (UIScreen.main.bounds.size.width/UIScreen.main.bounds.size.height) {
+        if imageRatio < screenRatio {
             self.imageHeightConstraint.constant = frame.size.height
+            self.imageWidthConstraint.constant = frame.size.height*imageRatio
         } else {
             self.imageHeightConstraint.constant = frame.size.width/imageRatio
+            self.imageWidthConstraint.constant = frame.size.width
         }
         return finalImage
+    }
+    
+    func redrawImage() {
+        self.galleryImageView.image = self.fitIntoFrame(image: self.galleryImageView.image)
+        self.redrawConstraintIfNeeded()
     }
 }
 
 extension WinguGalleryCollectionViewCell: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return self.galleryImageView
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        self.delegate?.didStartZooming(self)
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
