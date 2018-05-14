@@ -13,27 +13,27 @@ public class ImageAsset: NSObject {
     public var url: URL?
     public var image: UIImage?
     public var caption: String?
-    
+
     private override init() { }
-    
+
     public init(url: URL) {
         self.url = url
     }
-    
+
     public init(url: URL, caption: String?) {
         self.url = url
         self.caption = caption
     }
-    
+
     public init(image: UIImage) {
         self.image = image
     }
-    
+
     public init(image: UIImage, caption: String?) {
         self.image = image
         self.caption = caption
     }
-    
+
     func download(completion:@escaping(_ success: Bool?) -> Void) -> URLSessionDataTask? {
         return ImageAsset.download(url: url) { (success, image) in
             self.image = image
@@ -60,5 +60,5 @@ public class ImageAsset: NSObject {
         dataTask.resume()
         return dataTask
     }
-    
+
 }

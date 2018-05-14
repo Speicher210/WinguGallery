@@ -18,8 +18,6 @@
 		DD6479B020A1E63300D2F767 /* WinguNibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479AB20A1E63300D2F767 /* WinguNibLoadingView.swift */; };
 		DD6479B320A1E64800D2F767 /* SDKCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479B220A1E64800D2F767 /* SDKCompanion.swift */; };
 		DD6479B520A1E66D00D2F767 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479B420A1E66D00D2F767 /* ImageAsset.swift */; };
-		DDD05713209C587C00217DDA /* WinguFullscreenGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */; };
-		DDD05718209C587C00217DDA /* WinguFullscreenGalleryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD05717209C587C00217DDA /* WinguFullscreenGalleryTests.swift */; };
 		DDD0571A209C587C00217DDA /* WinguFullscreenGallery.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDD0572A209C589900217DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD05729209C589900217DDA /* AppDelegate.swift */; };
 		DDD0572C209C589900217DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0572B209C589900217DDA /* ViewController.swift */; };
@@ -29,13 +27,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		DD64799E20A19D3200D2F767 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DDD05700209C587C00217DDA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DDD05708209C587C00217DDA;
-			remoteInfo = WinguFullscreenGallery;
-		};
-		DDD05714209C587C00217DDA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDD05700209C587C00217DDA /* Project object */;
 			proxyType = 1;
@@ -70,9 +61,6 @@
 		DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinguFullscreenGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinguFullscreenGallery.h; sourceTree = "<group>"; };
 		DDD0570D209C587C00217DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDD05712209C587C00217DDA /* WinguFullscreenGalleryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinguFullscreenGalleryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDD05717209C587C00217DDA /* WinguFullscreenGalleryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinguFullscreenGalleryTests.swift; sourceTree = "<group>"; };
-		DDD05719209C587C00217DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDD05727209C589900217DDA /* WinguFullscreenGalleryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinguFullscreenGalleryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD05729209C589900217DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD0572B209C589900217DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,14 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDD0570F209C587C00217DDA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDD05713209C587C00217DDA /* WinguFullscreenGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				DDD0570B209C587C00217DDA /* WinguFullscreenGallery */,
-				DDD05716209C587C00217DDA /* WinguFullscreenGalleryTests */,
 				DDD05728209C589900217DDA /* WinguFullscreenGalleryDemo */,
 				DDD0570A209C587C00217DDA /* Products */,
 				DDD0574E209C5BF400217DDA /* Frameworks */,
@@ -145,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */,
-				DDD05712209C587C00217DDA /* WinguFullscreenGalleryTests.xctest */,
 				DDD05727209C589900217DDA /* WinguFullscreenGalleryDemo.app */,
 			);
 			name = Products;
@@ -160,15 +138,6 @@
 				DD6479A620A1E63300D2F767 /* View */,
 			);
 			path = WinguFullscreenGallery;
-			sourceTree = "<group>";
-		};
-		DDD05716209C587C00217DDA /* WinguFullscreenGalleryTests */ = {
-			isa = PBXGroup;
-			children = (
-				DDD05717209C587C00217DDA /* WinguFullscreenGalleryTests.swift */,
-				DDD05719209C587C00217DDA /* Info.plist */,
-			);
-			path = WinguFullscreenGalleryTests;
 			sourceTree = "<group>";
 		};
 		DDD05728209C589900217DDA /* WinguFullscreenGalleryDemo */ = {
@@ -224,24 +193,6 @@
 			productReference = DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DDD05711209C587C00217DDA /* WinguFullscreenGalleryTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DDD05720209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGalleryTests" */;
-			buildPhases = (
-				DDD0570E209C587C00217DDA /* Sources */,
-				DDD0570F209C587C00217DDA /* Frameworks */,
-				DDD05710209C587C00217DDA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DDD05715209C587C00217DDA /* PBXTargetDependency */,
-			);
-			name = WinguFullscreenGalleryTests;
-			productName = WinguFullscreenGalleryTests;
-			productReference = DDD05712209C587C00217DDA /* WinguFullscreenGalleryTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		DDD05726209C589900217DDA /* WinguFullscreenGalleryDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD05736209C589A00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGalleryDemo" */;
@@ -275,9 +226,6 @@
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
 					};
-					DDD05711209C587C00217DDA = {
-						CreatedOnToolsVersion = 9.3;
-					};
 					DDD05726209C589900217DDA = {
 						CreatedOnToolsVersion = 9.3;
 					};
@@ -297,7 +245,6 @@
 			projectRoot = "";
 			targets = (
 				DDD05708209C587C00217DDA /* WinguFullscreenGallery */,
-				DDD05711209C587C00217DDA /* WinguFullscreenGalleryTests */,
 				DDD05726209C589900217DDA /* WinguFullscreenGalleryDemo */,
 			);
 		};
@@ -310,13 +257,6 @@
 			files = (
 				DD6479AC20A1E63300D2F767 /* WinguGalleryCollectionViewCell.xib in Resources */,
 				DD6479AE20A1E63300D2F767 /* WinguGalleryView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDD05710209C587C00217DDA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,14 +286,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DDD0570E209C587C00217DDA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDD05718209C587C00217DDA /* WinguFullscreenGalleryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDD05723209C589900217DDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,11 +302,6 @@
 			isa = PBXTargetDependency;
 			target = DDD05708209C587C00217DDA /* WinguFullscreenGallery */;
 			targetProxy = DD64799E20A19D3200D2F767 /* PBXContainerItemProxy */;
-		};
-		DDD05715209C587C00217DDA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DDD05708209C587C00217DDA /* WinguFullscreenGallery */;
-			targetProxy = DDD05714209C587C00217DDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -573,44 +500,6 @@
 			};
 			name = Release;
 		};
-		DDD05721209C587C00217DDA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9232HDTN9M;
-				INFOPLIST_FILE = WinguFullscreenGalleryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguFullscreenGalleryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		DDD05722209C587C00217DDA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9232HDTN9M;
-				INFOPLIST_FILE = WinguFullscreenGalleryTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguFullscreenGalleryTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		DDD05737209C589A00217DDA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -668,15 +557,6 @@
 			buildConfigurations = (
 				DDD0571E209C587C00217DDA /* Debug */,
 				DDD0571F209C587C00217DDA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DDD05720209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGalleryTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DDD05721209C587C00217DDA /* Debug */,
-				DDD05722209C587C00217DDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

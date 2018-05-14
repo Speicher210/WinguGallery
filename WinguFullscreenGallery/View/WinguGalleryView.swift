@@ -10,7 +10,7 @@ import UIKit
 
 public class WinguGalleryView: WinguNibLoadingView {
     @IBOutlet weak var collectionView: UICollectionView!
-    
+
     public var assets: [ImageAsset?]? {
         didSet {
             self.collectionView.reloadData()
@@ -21,7 +21,7 @@ public class WinguGalleryView: WinguNibLoadingView {
         super.willMove(toSuperview: newSuperview)
         self.collectionView.register(UINib.init(nibName: String(describing: WinguGalleryCollectionViewCell.self), bundle: Bundle(for: type(of: self))), forCellWithReuseIdentifier: WinguGalleryCollectionViewCell.reusableIdentifier)
     }
-    
+
     public override func layoutSubviews() {
         super.layoutSubviews()
         self.collectionView.collectionViewLayout.invalidateLayout()
@@ -34,11 +34,11 @@ public class WinguGalleryView: WinguNibLoadingView {
 }
 
 extension WinguGalleryView: UICollectionViewDataSource {
-    
+
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return assets?.count ?? 0
     }
-    
+
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: WinguGalleryCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: WinguGalleryCollectionViewCell.reusableIdentifier, for: indexPath) as? WinguGalleryCollectionViewCell)!
         cell.withImageAsset(assets?[indexPath.row])
@@ -51,7 +51,7 @@ extension WinguGalleryView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         (cell as? WinguGalleryCollectionViewCell)?.cancelPendingDataTask()
     }
-    
+
     public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         (cell as? WinguGalleryCollectionViewCell)?.withImageAsset(assets?[indexPath.row])
     }
@@ -65,7 +65,6 @@ extension WinguGalleryView: UICollectionViewDelegateFlowLayout {
 
 extension WinguGalleryView: WinguGalleryCollectionViewCellDelegate {
     func didStartZooming(_ cell: WinguGalleryCollectionViewCell) {
-        guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
-        guard let asset: ImageAsset = self.assets?[indexPath.row] else { return }
+        //TODO: download better resoluton while zooming?
     }
 }

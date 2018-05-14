@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var winguGalleryView: WinguGalleryView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.segmentedControlValueChanged(self.segmentedControl)
@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         default: break
         }
     }
-    
+
     func fillWithURLImages() {
         let lowRange: UInt32 = 600
         let highRange: UInt32 = 1200
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
         }
         winguGalleryView.assets = returnArray
     }
-    
+
     func fillWithLocalImages() {
         var returnArray: [ImageAsset?] = [ImageAsset]()
         for i in 1...8 {
@@ -48,6 +48,5 @@ class ViewController: UIViewController {
         }
         winguGalleryView.assets = returnArray
     }
-    
-}
 
+}
