@@ -1,0 +1,4 @@
+language: swift
+branches:
+  only:
+    - master
