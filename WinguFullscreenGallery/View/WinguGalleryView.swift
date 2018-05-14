@@ -67,8 +67,5 @@ extension WinguGalleryView: WinguGalleryCollectionViewCellDelegate {
     func didStartZooming(_ cell: WinguGalleryCollectionViewCell) {
         guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
         guard let asset: ImageAsset = self.assets?[indexPath.row] else { return }
-        _ = asset.download { (_) in
-            cell.galleryImageView.image = asset.image
-        }
     }
 }

@@ -23,14 +23,14 @@
                         <subviews>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="Y2R-g3-1to">
                                 <rect key="frame" x="0.0" y="0.0" width="372" height="375"/>
-                                <color key="backgroundColor" red="0.2251217821" green="0.66666666669999997" blue="0.663158935" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="375" id="buA-yt-EU1"/>
                                     <constraint firstAttribute="width" constant="372" id="dup-Ci-FrN"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.83529411760000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Y2R-g3-1to" secondAttribute="trailing" priority="250" id="Q4y-Pe-Blg"/>
                             <constraint firstItem="Y2R-g3-1to" firstAttribute="top" secondItem="fYl-gF-3Tc" secondAttribute="top" priority="250" id="S31-PI-s22"/>
@@ -43,7 +43,7 @@
                     </scrollView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="fYl-gF-3Tc" secondAttribute="bottom" id="EGd-Qa-dtz"/>
                 <constraint firstItem="fYl-gF-3Tc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RSp-db-iCz"/>

@@ -33,20 +33,22 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         guard self.dataTask?.state != URLSessionDataTask.State.running else { return }
         guard let asset = asset else { return }
         if let image = asset.image {
-            galleryImageView.image = self.fitIntoFrame(image: image)
+            self.apply(image: self.fitIntoFrame(image: asset.image))
         } else if asset.url != nil {
-            self.galleryImageView.image = UIImage()
+            self.galleryImageView.image = nil
             self.dataTask = asset.download { (success) in
-                self.galleryImageView.image = self.fitIntoFrame(image: asset.image)
+                self.apply(image: self.fitIntoFrame(image: asset.image))
                 self.redrawConstraintIfNeeded()
             }
         }
     }
     
-    private func downloadAsset(from url: URL) {
-        self.dataTask = ImageAsset.download(url: url) { (success, image) in
-            self.galleryImageView.image = self.fitIntoFrame(image: image)
-            self.redrawConstraintIfNeeded()
+    func apply(image: UIImage?) {
+        guard let image = image else { return }
+        self.galleryImageView.alpha = 0
+        self.galleryImageView.image = image
+        UIView.animate(withDuration: 0.1) {
+            self.galleryImageView.alpha = 1
         }
     }
     
@@ -55,7 +57,7 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         self.scrollView.maximumZoomScale = 4
         self.redrawConstraintIfNeeded()
         self.observer = self.observe(\.bounds, options: NSKeyValueObservingOptions.new, changeHandler: { (cell, value) in
-            self.galleryImageView.image = self.fitIntoFrame(image: self.galleryImageView.image)
+            self.apply(image: self.fitIntoFrame(image: self.galleryImageView.image))
             self.redrawConstraintIfNeeded()
         })
     }
@@ -126,7 +128,7 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
     }
     
     func redrawImage() {
-        self.galleryImageView.image = self.fitIntoFrame(image: self.galleryImageView.image)
+        self.apply(image: self.fitIntoFrame(image: self.galleryImageView.image))
         self.redrawConstraintIfNeeded()
     }
 }
