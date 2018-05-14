@@ -28,16 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DDD05711209C587C00217DDA"
-               BuildableName = "WinguFullscreenGalleryTests.xctest"
-               BlueprintName = "WinguFullscreenGalleryTests"
-               ReferencedContainer = "container:WinguFullscreenGallery.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

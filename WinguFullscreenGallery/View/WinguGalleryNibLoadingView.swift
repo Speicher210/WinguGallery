@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-public class WinguNibLoadingView: UIView {
+public class WinguGalleryNibLoadingView: UIView {
 
     @IBOutlet weak var view: UIView!
 

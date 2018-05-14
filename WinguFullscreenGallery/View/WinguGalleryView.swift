@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class WinguGalleryView: WinguNibLoadingView {
+public class WinguGalleryView: WinguGalleryNibLoadingView {
     @IBOutlet weak var collectionView: UICollectionView!
 
     public var assets: [ImageAsset?]? {

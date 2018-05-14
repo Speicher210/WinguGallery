@@ -41,8 +41,8 @@ class ViewController: UIViewController {
 
     func fillWithLocalImages() {
         var returnArray: [ImageAsset?] = [ImageAsset]()
-        for i in 1...8 {
-            let image = UIImage(named: String(i))
+        for index in 1...8 {
+            let image = UIImage(named: String(index))
             let asset = ImageAsset(image: image!)
             returnArray.append(asset)
         }

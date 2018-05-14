@@ -15,7 +15,7 @@
 		DD6479AD20A1E63300D2F767 /* WinguGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479A820A1E63300D2F767 /* WinguGalleryView.swift */; };
 		DD6479AE20A1E63300D2F767 /* WinguGalleryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6479A920A1E63300D2F767 /* WinguGalleryView.xib */; };
 		DD6479AF20A1E63300D2F767 /* WinguGalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479AA20A1E63300D2F767 /* WinguGalleryCollectionViewCell.swift */; };
-		DD6479B020A1E63300D2F767 /* WinguNibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479AB20A1E63300D2F767 /* WinguNibLoadingView.swift */; };
+		DD6479B020A1E63300D2F767 /* WinguGalleryNibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479AB20A1E63300D2F767 /* WinguGalleryNibLoadingView.swift */; };
 		DD6479B320A1E64800D2F767 /* SDKCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479B220A1E64800D2F767 /* SDKCompanion.swift */; };
 		DD6479B520A1E66D00D2F767 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479B420A1E66D00D2F767 /* ImageAsset.swift */; };
 		DDD0571A209C587C00217DDA /* WinguFullscreenGallery.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,7 +55,7 @@
 		DD6479A820A1E63300D2F767 /* WinguGalleryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinguGalleryView.swift; sourceTree = "<group>"; };
 		DD6479A920A1E63300D2F767 /* WinguGalleryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WinguGalleryView.xib; sourceTree = "<group>"; };
 		DD6479AA20A1E63300D2F767 /* WinguGalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinguGalleryCollectionViewCell.swift; sourceTree = "<group>"; };
-		DD6479AB20A1E63300D2F767 /* WinguNibLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinguNibLoadingView.swift; sourceTree = "<group>"; };
+		DD6479AB20A1E63300D2F767 /* WinguGalleryNibLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinguGalleryNibLoadingView.swift; sourceTree = "<group>"; };
 		DD6479B220A1E64800D2F767 /* SDKCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKCompanion.swift; sourceTree = "<group>"; };
 		DD6479B420A1E66D00D2F767 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinguFullscreenGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +96,7 @@
 				DD6479A820A1E63300D2F767 /* WinguGalleryView.swift */,
 				DD6479A920A1E63300D2F767 /* WinguGalleryView.xib */,
 				DD6479AA20A1E63300D2F767 /* WinguGalleryCollectionViewCell.swift */,
-				DD6479AB20A1E63300D2F767 /* WinguNibLoadingView.swift */,
+				DD6479AB20A1E63300D2F767 /* WinguGalleryNibLoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,7 +280,7 @@
 			files = (
 				DD6479B520A1E66D00D2F767 /* ImageAsset.swift in Sources */,
 				DD6479AF20A1E63300D2F767 /* WinguGalleryCollectionViewCell.swift in Sources */,
-				DD6479B020A1E63300D2F767 /* WinguNibLoadingView.swift in Sources */,
+				DD6479B020A1E63300D2F767 /* WinguGalleryNibLoadingView.swift in Sources */,
 				DD6479AD20A1E63300D2F767 /* WinguGalleryView.swift in Sources */,
 				DD6479B320A1E64800D2F767 /* SDKCompanion.swift in Sources */,
 			);
