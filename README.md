@@ -11,6 +11,20 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+
+To integrate WinguGallery into your Xcode project using Carthage, specify it in your Cartfile:
+
+```ruby
+github "wingu-GmbH/WinguGallery"
+```
+Run carthage update to build the framework and drag the built WinguGallery.framework into your Xcode project.
+
+### Cocoapods
+
 WinguGallery is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
