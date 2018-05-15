@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="Rpy-Vb-Am7">
             <objects>
-                <viewController id="wL1-yf-ihp" customClass="ViewController" customModule="WinguFullscreenGalleryDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wL1-yf-ihp" customClass="ViewController" customModule="WinguGalleryDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OyG-jK-V2S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                     <action selector="segmentedControlValueChanged:" destination="wL1-yf-ihp" eventType="valueChanged" id="N5o-8h-Lsp"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncu-TL-A6u" customClass="WinguGalleryView" customModule="WinguFullscreenGallery">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ncu-TL-A6u" customClass="WinguGalleryView" customModule="WinguGallery">
                                 <rect key="frame" x="0.0" y="48" width="375" height="619"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>

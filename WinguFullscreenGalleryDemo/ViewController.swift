@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WinguFullscreenGallery
+import WinguGallery
 
 class ViewController: UIViewController {
 
@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.segmentedControlValueChanged(self.segmentedControl)
+        self.winguGalleryView.preselectItem(at: 2)
     }
 
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {

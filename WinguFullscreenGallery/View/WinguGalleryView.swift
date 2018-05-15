@@ -16,6 +16,8 @@ public class WinguGalleryView: WinguGalleryNibLoadingView {
             self.collectionView.reloadData()
         }
     }
+    
+    private var preselectedIndex: Int = 0
 
     override public func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
@@ -30,6 +32,15 @@ public class WinguGalleryView: WinguGalleryNibLoadingView {
                 self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
             }
         }
+    }
+    
+    public func preselectItem(at index: Int) {
+        self.preselectedIndex = index
+    }
+    
+    public override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        self.collectionView.scrollToItem(at: IndexPath(row: self.preselectedIndex, section: 0), at: .centeredHorizontally, animated: false)
     }
 }
 
