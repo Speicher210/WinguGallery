@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD64799C20A19D3200D2F767 /* WinguFullscreenGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */; };
-		DD64799D20A19D3200D2F767 /* WinguFullscreenGallery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DD64799C20A19D3200D2F767 /* WinguGallery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDD05709209C587C00217DDA /* WinguGallery.framework */; };
+		DD64799D20A19D3200D2F767 /* WinguGallery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDD05709209C587C00217DDA /* WinguGallery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD6479A120A1D87B00D2F767 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDF77C28209C641D006BD4E1 /* Media.xcassets */; };
 		DD6479A320A1D8BB00D2F767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD6479A220A1D8BB00D2F767 /* Assets.xcassets */; };
 		DD6479AC20A1E63300D2F767 /* WinguGalleryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD6479A720A1E63300D2F767 /* WinguGalleryCollectionViewCell.xib */; };
@@ -42,7 +42,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DD64799D20A19D3200D2F767 /* WinguFullscreenGallery.framework in Embed Frameworks */,
+				DD64799D20A19D3200D2F767 /* WinguGallery.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,10 +58,10 @@
 		DD6479AB20A1E63300D2F767 /* WinguGalleryNibLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinguGalleryNibLoadingView.swift; sourceTree = "<group>"; };
 		DD6479B220A1E64800D2F767 /* SDKCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKCompanion.swift; sourceTree = "<group>"; };
 		DD6479B420A1E66D00D2F767 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
-		DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinguFullscreenGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD05709209C587C00217DDA /* WinguGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinguGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinguFullscreenGallery.h; sourceTree = "<group>"; };
 		DDD0570D209C587C00217DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDD05727209C589900217DDA /* WinguFullscreenGalleryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinguFullscreenGalleryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD05727209C589900217DDA /* WinguGalleryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinguGalleryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD05729209C589900217DDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDD0572B209C589900217DDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDD0572E209C589900217DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD64799C20A19D3200D2F767 /* WinguFullscreenGallery.framework in Frameworks */,
+				DD64799C20A19D3200D2F767 /* WinguGallery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +123,8 @@
 		DDD0570A209C587C00217DDA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */,
-				DDD05727209C589900217DDA /* WinguFullscreenGalleryDemo.app */,
+				DDD05709209C587C00217DDA /* WinguGallery.framework */,
+				DDD05727209C589900217DDA /* WinguGalleryDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,9 +175,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DDD05708209C587C00217DDA /* WinguFullscreenGallery */ = {
+		DDD05708209C587C00217DDA /* WinguGallery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDD0571D209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGallery" */;
+			buildConfigurationList = DDD0571D209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguGallery" */;
 			buildPhases = (
 				DDD05704209C587C00217DDA /* Sources */,
 				DDD05705209C587C00217DDA /* Frameworks */,
@@ -188,14 +188,14 @@
 			);
 			dependencies = (
 			);
-			name = WinguFullscreenGallery;
+			name = WinguGallery;
 			productName = WinguFullscreenGallery;
-			productReference = DDD05709209C587C00217DDA /* WinguFullscreenGallery.framework */;
+			productReference = DDD05709209C587C00217DDA /* WinguGallery.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DDD05726209C589900217DDA /* WinguFullscreenGalleryDemo */ = {
+		DDD05726209C589900217DDA /* WinguGalleryDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDD05736209C589A00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGalleryDemo" */;
+			buildConfigurationList = DDD05736209C589A00217DDA /* Build configuration list for PBXNativeTarget "WinguGalleryDemo" */;
 			buildPhases = (
 				DDD05723209C589900217DDA /* Sources */,
 				DDD05724209C589900217DDA /* Frameworks */,
@@ -207,9 +207,9 @@
 			dependencies = (
 				DD64799F20A19D3200D2F767 /* PBXTargetDependency */,
 			);
-			name = WinguFullscreenGalleryDemo;
+			name = WinguGalleryDemo;
 			productName = WinguFullscreenGalleryDemo;
-			productReference = DDD05727209C589900217DDA /* WinguFullscreenGalleryDemo.app */;
+			productReference = DDD05727209C589900217DDA /* WinguGalleryDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DDD05703209C587C00217DDA /* Build configuration list for PBXProject "WinguFullscreenGallery" */;
+			buildConfigurationList = DDD05703209C587C00217DDA /* Build configuration list for PBXProject "WinguGallery" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -244,8 +244,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDD05708209C587C00217DDA /* WinguFullscreenGallery */,
-				DDD05726209C589900217DDA /* WinguFullscreenGalleryDemo */,
+				DDD05708209C587C00217DDA /* WinguGallery */,
+				DDD05726209C589900217DDA /* WinguGalleryDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -300,7 +300,7 @@
 /* Begin PBXTargetDependency section */
 		DD64799F20A19D3200D2F767 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DDD05708209C587C00217DDA /* WinguFullscreenGallery */;
+			target = DDD05708209C587C00217DDA /* WinguGallery */;
 			targetProxy = DD64799E20A19D3200D2F767 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguFullscreenGallery;
+				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguGallery;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -492,7 +492,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguFullscreenGallery;
+				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguGallery;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -513,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguFullscreenGalleryDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguGalleryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguFullscreenGalleryDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguGalleryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -543,7 +543,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDD05703209C587C00217DDA /* Build configuration list for PBXProject "WinguFullscreenGallery" */ = {
+		DDD05703209C587C00217DDA /* Build configuration list for PBXProject "WinguGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDD0571B209C587C00217DDA /* Debug */,
@@ -552,7 +552,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDD0571D209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGallery" */ = {
+		DDD0571D209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguGallery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDD0571E209C587C00217DDA /* Debug */,
@@ -561,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDD05736209C589A00217DDA /* Build configuration list for PBXNativeTarget "WinguFullscreenGalleryDemo" */ = {
+		DDD05736209C589A00217DDA /* Build configuration list for PBXNativeTarget "WinguGalleryDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDD05737209C589A00217DDA /* Debug */,
