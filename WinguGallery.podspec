@@ -21,17 +21,13 @@ Swipeable gallery component for iOS apps.
   s.source           = { :git => 'https://github.com/wingu-GmbH/WinguGallery.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/@jkmazur'
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.swift_version = '4.0'
-  s.source_files = 'WinguFullscreenGallery/**/*'
-  
-  # s.resource_bundles = {
-  #   'WinguGallery' => ['WinguGallery/Assets/*.png']
-  # }
+  s.source_files = 'WinguFullscreenGallery/**/*.{swift}'
+  s.resource = 'WinguFullscreenGallery/**/*.{png,bundle,xib,nib}'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
 
 
