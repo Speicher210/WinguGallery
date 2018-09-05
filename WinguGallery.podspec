@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WinguGallery'
-  s.version          = '0.1.9'                  #sh_replace_version
+  s.version          = '0.1.11'                  #sh_replace_version
   s.summary          = 'Gallery component inside wingu SDK'
   s.description      = <<-DESC
 Swipeable gallery component for iOS apps. 
