@@ -29,3 +29,16 @@ Swipeable gallery component for iOS apps.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
