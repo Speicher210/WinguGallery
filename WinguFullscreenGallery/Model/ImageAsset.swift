@@ -10,8 +10,20 @@ import UIKit
 
 public class ImageAsset: NSObject {
 
+    public enum ImageType {
+        case jpg
+        case gif
+
+        static func from(mimeType: String) -> ImageType? {
+            if mimeType.contains("gif") { return .gif
+            } else if mimeType.contains("jpg") { return .jpg }
+            return nil
+        }
+    }
+
     public var url: URL?
     public var image: UIImage?
+    public var type: ImageType?
     public var caption: String?
 
     private override init() { }
@@ -35,27 +47,34 @@ public class ImageAsset: NSObject {
     }
 
     func download(completion:@escaping(_ success: Bool?) -> Void) -> URLSessionDataTask? {
-        return ImageAsset.download(url: url) { (success, image) in
+        return ImageAsset.download(url: url) { (success, image, type)  in
             self.image = image
+            if let type = type {
+                self.type = type
+            }
             completion(success)
         }
     }
 
-    static func download(url: URL?, completion:@escaping(_ success: Bool?, _ image: UIImage?) -> Void) -> URLSessionDataTask? {
+    static func download(url: URL?, completion:@escaping(_ success: Bool?, _ image: UIImage?, _ type: ImageAsset.ImageType?) -> Void) -> URLSessionDataTask? {
         guard let url = url else {
-            completion(false, nil)
+            completion(false, nil, nil)
             return nil
         }
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error  in
             guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
-                let image = UIImage(data: data)
+                var image = UIImage(data: data)
                 else {
-                    DispatchQueue.main.async { completion(false, nil) }
+                    DispatchQueue.main.async { completion(false, nil, nil) }
                     return
             }
-            DispatchQueue.main.async { completion(true, image) }
+            let type: ImageAsset.ImageType? = ImageType.from(mimeType: mimeType)
+            if type == .gif, let gif = UIImage.gif(data: data) {
+                image = gif
+            }
+            DispatchQueue.main.async { completion(true, image, type) }
         }
         dataTask.resume()
         return dataTask

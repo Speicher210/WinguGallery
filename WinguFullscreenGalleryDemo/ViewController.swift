@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0: self.fillWithLocalImages()
         case 1: self.fillWithURLImages()
+        case 2: self.fillWithGifs()
         default: break
         }
     }
@@ -45,6 +46,26 @@ class ViewController: UIViewController {
         for index in 1...8 {
             let image = UIImage(named: String(index))
             let asset = ImageAsset(image: image!)
+            returnArray.append(asset)
+        }
+        winguGalleryView.assets = returnArray
+    }
+
+    func fillWithGifs() {
+        let gifs: [String] = [
+            "https://i.giphy.com/njSlroypPFvKo.gif",
+            "https://i.giphy.com/wKQRIoFXsQIGA.gif",
+            "https://i.giphy.com/3ohjUNy8TSfbaWVZlu.gif",
+            "https://i.giphy.com/hrOSnyyh7O372.gif",
+            "https://i.giphy.com/3YGKFfw611fZS.gif",
+            "https://i.giphy.com/3o7qDLkrKr034Z3hQI.gif",
+            "https://i.giphy.com/zvnMQ8j6lb9bW.gif",
+            "https://i.giphy.com/mYb4JOmRfa5oKRh6k4.gif"
+        ]
+        var returnArray: [ImageAsset?] = [ImageAsset]()
+        for item in gifs {
+            let url = URL(string: item)
+            let asset = ImageAsset(url: url!)
             returnArray.append(asset)
         }
         winguGalleryView.assets = returnArray

@@ -40,7 +40,9 @@ Jakub Mazur, [@jkmazur](https://twitter.com/jkmazur)
 
 To [Unsplash](https://twitter.com/unsplash) for providing photos for this example and to photographers for sharing them! [@sylwiabartyzel](https://twitter.com/sylwiabartyzel), [@lechonkirb](https://twitter.com/lechonkirb), [@karlmagnuson](https://twitter.com/karlmagnuson), [@ludovic_photo](https://twitter.com/ludovic_photo), [@derekrliang](https://twitter.com/derekrliang), [@thetoleikis](https://twitter.com/thetoleikis), [@iwillbm](https://twitter.com/iwillbm), [@Nate_Dumlao](https://twitter.com/nate_dumlao)!
 
-And [Picsum Photos](https://picsum.photos) 🙌 for handling asynchronous calls in the example.
+And [Picsum Photos](https://picsum.photos) 🙌 for handling asynchronous calls in the example
+
+Gif support is possible thanks to [SwiftGif](https://github.com/swiftgif/SwiftGif)
 ## wingu
 
 This is a wingu open source project. With wingu platform, API and SDK it is easier then ever to use proximity technologies in new and exciting ways, such as creating a simple app or adding proximity functionality to your existing application. For more information check out: [https://www.wingu.de/en/developer/](https://www.wingu.de/en/developer/) or start a free trail at [https://wingu-portal.de/register.](https://wingu-portal.de/register.)
