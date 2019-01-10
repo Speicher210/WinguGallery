@@ -22,7 +22,7 @@ Basic implementation of a gallery is not listed here. See the screenshots to hav
 
 ## Screenshots 📸
 
-![Horizontal view](README_media/horizontal.png)<br/>
+![Horizontal view](README_media/horizontal.png) 
 ![Vertical view](README_media/vertical.png)
 
 
