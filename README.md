@@ -1,13 +1,34 @@
 # WinguGallery
 
-[![CI Status](https://img.shields.io/travis/wingu-GmbH/WinguGallery.svg?style=flat)](https://travis-ci.org/JakubMazur/WinguGallery)
 [![Version](https://img.shields.io/cocoapods/v/WinguGallery.svg?style=flat)](https://cocoapods.org/pods/WinguGallery)
 [![License](https://img.shields.io/cocoapods/l/WinguGallery.svg?style=flat)](https://cocoapods.org/pods/WinguGallery)
 [![Platform](https://img.shields.io/cocoapods/p/WinguGallery.svg?style=flat)](https://cocoapods.org/pods/WinguGallery)
 
+View that provides scrollable galleries with zooming. It can be embedded in any other view and in `UIViewController`. Internally it uses `UICollectionView` to display images.
+
+## Features
+✅ - Implemented ⚠️ - Will be added in next releases (order may vary)
+
+Basic implementation of a gallery is not listed here. See the screenshots to have basic idea of gallery view.
+
+* ✅ Zooming
+* ✅ GIFs Support
+* ✅ Local images support
+* ✅ Async download images to cell
+* ⚠️ Vertical scrolling
+* ⚠️ Spacing between images while swiping
+* ⚠️ Loader
+* ⚠️ Download better resolution while zooming callback
+
+## Screenshots 📸
+
+![Horizontal view](README_media/horizontal.png)<br/>
+![Vertical view](README_media/horizontal.png)
+
+
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+You can clone project and run example demo. It will compile on simulator without any dependency or changes.
 
 ## Installation
 
