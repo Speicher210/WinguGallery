@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WinguGallery'
-  s.version          = '0.1.14'                  #sh_replace_version
+  s.version          = '0.2.0'                  #sh_replace_version
   s.summary          = 'Gallery component inside wingu SDK'
   s.description      = <<-DESC
 Swipeable gallery component for iOS apps. 
@@ -29,6 +29,7 @@ Swipeable gallery component for iOS apps.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
 end
+
 
 
 
