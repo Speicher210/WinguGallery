@@ -33,13 +33,12 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         guard self.dataTask?.state != URLSessionDataTask.State.running else { return }
         guard let asset = asset else { return }
         if asset.image != nil {
-            self.apply(image: self.fitIntoFrame(image: asset.image))
+            self.apply(image: self.fitIntoFrame(image: asset.image, type: asset.type))
         } else if asset.url != nil {
             self.galleryImageView.image = nil
-            self.dataTask = asset.download { (_) in
-                self.apply(image: self.fitIntoFrame(image: asset.image))
-                self.redrawConstraintIfNeeded()
-            }
+            self.dataTask = asset.download(completion: { _ in
+                self.apply(image: self.fitIntoFrame(image: asset.image, type: asset.type))
+            })
         }
     }
 
@@ -57,7 +56,7 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         self.scrollView.maximumZoomScale = 4
         self.redrawConstraintIfNeeded()
         self.observer = self.observe(\.bounds, options: NSKeyValueObservingOptions.new, changeHandler: { (_, _) in
-            self.apply(image: self.fitIntoFrame(image: self.galleryImageView.image))
+            self.apply(image: self.fitIntoFrame(image: self.galleryImageView.image, type: nil))
             self.redrawConstraintIfNeeded()
         })
     }
@@ -100,7 +99,8 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
         self.layoutIfNeeded()
     }
 
-    private func fitIntoFrame(image: UIImage?) -> UIImage? {
+    private func fitIntoFrame(image: UIImage?, type: ImageAsset.ImageType?) -> UIImage? {
+        let type: ImageAsset.ImageType = type ?? .jpg
         guard let image = image else { return nil }
         guard image.size != CGSize.zero else { return nil }
         let screenRatio = UIScreen.main.bounds.size.width/UIScreen.main.bounds.size.height
@@ -113,10 +113,6 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
             reqWidth = frame.size.height*imageRatio
         }
         let size = CGSize(width: reqWidth, height: reqWidth/imageRatio)
-        UIGraphicsBeginImageContext(size)
-        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        let finalImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
         if imageRatio < screenRatio {
             self.imageHeightConstraint.constant = frame.size.height
             self.imageWidthConstraint.constant = frame.size.height*imageRatio
@@ -124,11 +120,19 @@ class WinguGalleryCollectionViewCell: UICollectionViewCell {
             self.imageHeightConstraint.constant = frame.size.width/imageRatio
             self.imageWidthConstraint.constant = frame.size.width
         }
-        return finalImage
+        switch type {
+        case .gif: return image
+        case .jpg:
+            UIGraphicsBeginImageContext(size)
+            image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let finalImage: UIImage? = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return finalImage
+        }
     }
 
     func redrawImage() {
-        self.apply(image: self.fitIntoFrame(image: self.galleryImageView.image))
+        self.apply(image: self.fitIntoFrame(image: self.galleryImageView.image, type: nil))
         self.redrawConstraintIfNeeded()
     }
 }

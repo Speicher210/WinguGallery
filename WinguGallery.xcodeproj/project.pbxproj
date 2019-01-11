@@ -18,6 +18,7 @@
 		DD6479B020A1E63300D2F767 /* WinguGalleryNibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479AB20A1E63300D2F767 /* WinguGalleryNibLoadingView.swift */; };
 		DD6479B320A1E64800D2F767 /* SDKCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479B220A1E64800D2F767 /* SDKCompanion.swift */; };
 		DD6479B520A1E66D00D2F767 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6479B420A1E66D00D2F767 /* ImageAsset.swift */; };
+		DD934E8021E774EE0054CF20 /* SwiftGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD934E7F21E774EE0054CF20 /* SwiftGif.swift */; };
 		DDD0571A209C587C00217DDA /* WinguFullscreenGallery.h in Headers */ = {isa = PBXBuildFile; fileRef = DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDD0572A209C589900217DDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD05729209C589900217DDA /* AppDelegate.swift */; };
 		DDD0572C209C589900217DDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD0572B209C589900217DDA /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		DD6479AB20A1E63300D2F767 /* WinguGalleryNibLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinguGalleryNibLoadingView.swift; sourceTree = "<group>"; };
 		DD6479B220A1E64800D2F767 /* SDKCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKCompanion.swift; sourceTree = "<group>"; };
 		DD6479B420A1E66D00D2F767 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
+		DD934E7F21E774EE0054CF20 /* SwiftGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftGif.swift; sourceTree = "<group>"; };
 		DDD05709209C587C00217DDA /* WinguGallery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WinguGallery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinguFullscreenGallery.h; sourceTree = "<group>"; };
 		DDD0570D209C587C00217DDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		DD934E8121E774F80054CF20 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				DD934E7F21E774EE0054CF20 /* SwiftGif.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		DDD056FF209C587C00217DDA = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		DDD0570B209C587C00217DDA /* WinguFullscreenGallery */ = {
 			isa = PBXGroup;
 			children = (
+				DD934E8121E774F80054CF20 /* Dependencies */,
 				DD6479B120A1E64800D2F767 /* Model */,
 				DDD0570C209C587C00217DDA /* WinguFullscreenGallery.h */,
 				DDD0570D209C587C00217DDA /* Info.plist */,
@@ -179,6 +190,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDD0571D209C587C00217DDA /* Build configuration list for PBXNativeTarget "WinguGallery" */;
 			buildPhases = (
+				DD7E276321884946000CE16F /* ShellScript */,
 				DDD05704209C587C00217DDA /* Sources */,
 				DDD05705209C587C00217DDA /* Frameworks */,
 				DDD05706209C587C00217DDA /* Headers */,
@@ -228,6 +240,7 @@
 					};
 					DDD05726209C589900217DDA = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -273,11 +286,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DD7E276321884946000CE16F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/usr/local/bin:$PATH\"\n\nif which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DDD05704209C587C00217DDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD934E8021E774EE0054CF20 /* SwiftGif.swift in Sources */,
 				DD6479B520A1E66D00D2F767 /* ImageAsset.swift in Sources */,
 				DD6479AF20A1E63300D2F767 /* WinguGalleryCollectionViewCell.swift in Sources */,
 				DD6479B020A1E63300D2F767 /* WinguGalleryNibLoadingView.swift in Sources */,
@@ -517,7 +551,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguGalleryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -537,7 +571,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de.wingu.WinguGalleryDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
