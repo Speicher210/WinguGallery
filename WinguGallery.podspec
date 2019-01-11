@@ -22,7 +22,7 @@ Swipeable gallery component for iOS apps.
   s.social_media_url = 'https://twitter.com/@jkmazur'
 
   s.ios.deployment_target = '10.0'
-  s.swift_version = '4.2'
+  s.swift_version = '4.2.1'
   s.source_files = 'WinguFullscreenGallery/**/*.{swift}'
   s.resource = 'WinguFullscreenGallery/**/*.{png,bundle,xib,nib}'
 
